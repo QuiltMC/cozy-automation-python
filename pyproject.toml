@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "cozy-automation-python"
+version = "0.1.0"
+description = "A Python evaluation bot for our community"
+authors = ["Amber Bertucci <amber@akarys.me>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/QuiltMC/cozy-automation-python"
+repository = "https://github.com/QuiltMC/cozy-automation-python"
+
+[tool.poetry.dependencies]
+python = "^3.10.0"
+disnake = "^2.4"
+python-dotenv = "^0.19.2"
+coloredlogs = "^15.0.1"
+arrow = "^1.2.3"
+
+[tool.poetry.dev-dependencies]
+isort = "^5.10.1"
+black = "^22.10.0"
+flake8 = "^4.0.0"
+flake8-annotations = "^2.6.2"
+flake8-bugbear = "^22.1.11"
+flake8-docstrings = "^1.6.0"
+flake8-isort = "^4.1.1"
+flake8-string-format = "^0.3.0"
+flake8-todo = "^0.7"
+pep8-naming = "^0.12.1"
+pre-commit = "^2.13.0"
+taskipy = "^1.8.1"
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.black]
+line-length = 100
+
+[tool.taskipy.tasks]
+bot = { cmd = "python -m cozy", help = "Runs the main bot process"}
+lint = { cmd = "pre-commit run --all-files", help = "Lints project files" }
+precommit = { cmd = "pre-commit install", help = "Installs the pre-commit git hook" }
+format = { cmd = "black --target-version py310 .", help = "Runs the black python formatter" }
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
