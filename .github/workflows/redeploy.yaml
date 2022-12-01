@@ -16,4 +16,4 @@ jobs:
           echo "$KUBECONFIG" > .kubeconfig
           KUBECONFIG=.kubeconfig kubectl rollout restart deployment cozy-automation-python
         env:
-          KUBECONFIG: ${{ secrets.STARLAKE_KUBERNETES }}
+          KUBECONFIG: ${{ secrets.KUBECONFIG }}
