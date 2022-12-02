@@ -50,7 +50,7 @@ class CozyBot(Bot):
     def new(cls) -> "CozyBot":
         """Generate a populated bot instance."""
         intents = Intents.default()
-        
+
         intents.members = True
 
         intents.dm_messages = False
